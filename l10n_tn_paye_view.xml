@@ -83,7 +83,7 @@
             id="fiche_paye"
             model="hr.payslip"
             name="fiche.paye"
-            rml="l10n_l10n_tn_paye/report/fiche_paye.rml"
+            rml="l10n_tn_paye/report/fiche_paye.rml"
             string="Fiche de Paie" />
 			
     </data>
