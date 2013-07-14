@@ -507,13 +507,13 @@
         <field name="amount_select">code</field>
         <field name="appears_on_payslip" eval="False"/>
         <field name="amount_python_compute">x = y = 0.0
-			result_str = str(C_IMPAN - categories.DEDIRPP)
-			result_list = str(result_str).split('.')
-			irpp_entier_str = result_list[0]
-			irpp_unit_str = result_list[1]
-			x = float(irpp_entier_str)
-			y = float(irpp_unit_str)
-			result = x+1 if y > 0 else x</field>
+result_str = str(C_IMPAN - categories.DEDIRPP)
+result_list = str(result_str).split('.')
+irpp_entier_str = result_list[0]
+irpp_unit_str = result_list[1]
+x = float(irpp_entier_str)
+y = float(irpp_unit_str)
+result = x+1 if y > 0 else x</field>
 		<field name="note">Le cumul imposable aprés déduction est la valeur du cumul trouvée aprés avoir soustraire toutes les déductions d'impôt.  </field>
 	</record> 
 	
