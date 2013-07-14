@@ -5,6 +5,7 @@ class hr_contract(osv.osv):
     _inherit = 'hr.contract'
 
     _columns = {
+    	'wage': fields.float('Wage', digits_compute=dp.get_precision('Payroll'), required=True, help="Basic Salary of the employee"),
         'nationalite': fields.char('Nationalite', size=64),
         'qualif': fields.char('Qualification', size=64),
         'niveau': fields.char('Niveau', size=64),
