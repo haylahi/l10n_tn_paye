@@ -490,7 +490,7 @@
         <field name="condition_select">none</field>
         <field name="amount_select">percentage</field>
         <field name="amount_percentage">10</field>
-        <field name="amount_percentage_base">categories.C_IMP</field>
+        <field name="amount_percentage_base">categories.C_IMP*12</field>
         <field name="appears_on_payslip" eval="True"/>
         <field name="register_id" ref="hr_CNSS_register"/>
 		<field name="note">Le calcul des frais professionnels se base sur 10% du cumul imposable </field>
@@ -506,7 +506,14 @@
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="appears_on_payslip" eval="False"/>
-        <field name="amount_python_compute">result = C_IMPAN - categories.DEDIRPP</field>
+        <field name="amount_python_compute">x = y = 0.0
+			result_str = str(C_IMPAN - categories.DEDIRPP)
+			result_list = str(result_str).split('.')
+			irpp_entier_str = result_list[0]
+			irpp_unit_str = result_list[1]
+			x = float(irpp_entier_str)
+			y = float(irpp_unit_str)
+			result = x+1 if y > 0 else x</field>
 		<field name="note">Le cumul imposable aprés déduction est la valeur du cumul trouvée aprés avoir soustraire toutes les déductions d'impôt.  </field>
 	</record> 
 	
